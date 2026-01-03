@@ -4,7 +4,7 @@
 int main() {
   std::cout << "Basic Memory KV Store";
 
-  KVStore store("robo_1");
+  KVStore store("Store_1", "logs/store_1.log");
 
   // PUT Operation
   std::cout << "Test 1: PUT Operations" << std::endl;
@@ -47,4 +47,25 @@ int main() {
   // PRINT Operation
   std::cout << "Test 6: PRINT Operations" << std::endl;
   store.print_store();
+
+  // Log File Content
+  std::cout << "Test 7: LOG File Content" << std::endl;
+  std::ifstream log_stream("logs/store_1.log");
+  if (log_stream.is_open()) {
+    std::string line;
+    int count = 0;
+    std::cout << "Log entries:" << std::endl;
+    while (std::getline(log_stream, line)) {
+      if (line.length() > 100) {
+        std::cout << " " << line.substr(0, 100) << "..." << std::endl;
+      } else {
+        std::cout << " " << line << std::endl;
+      }
+      count++;
+    }
+    log_stream.close();
+    std::cout << "Total log entries: " << count << std::endl;
+  } else {
+    std::cout << "Failed to open log file" << std::endl;
+  }
 }

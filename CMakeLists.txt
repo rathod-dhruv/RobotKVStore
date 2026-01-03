@@ -12,7 +12,8 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(json)
 
 include_directories(include)
-
+# NEW: Add threading library (for mutexes)
+find_package(Threads REQUIRED)
 add_executable(RobotKVStore
     src/main.cpp
     src/kv_store.cpp
@@ -21,4 +22,6 @@ add_executable(RobotKVStore
 # Create logs directory
 file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/../logs)
 
+# NEW: Link threading library
+target_link_libraries(RobotKVStore PRIVATE Threads::Threads)
 target_link_libraries(RobotKVStore PRIVATE nlohmann_json::nlohmann_json)
