@@ -16,6 +16,7 @@ include_directories(include)
 find_package(Threads REQUIRED)
 add_executable(RobotKVStore
     src/main.cpp
+    src/network.cpp    
     src/kv_store.cpp
 )
 

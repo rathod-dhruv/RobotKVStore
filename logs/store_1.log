@@ -1,5 +1,0 @@
-1.76741e+09|PUT|robot_a|{"battery":"100","position":[10,20],"status":"ACTIVE"}
-1.76741e+09|PUT|robot_b|{"battery":"50","position":[50,30],"status":"IDLE"}
-1.76741e+09|PUT|robot_c|{"battery":100,"position":[50,60],"status":"CHARGING"}
-1.76741e+09|GET_ALL||{"robot_a":{"battery":"100","position":[10,20],"status":"ACTIVE"},"robot_b":{"battery":"50","position":[50,30],"status":"IDLE"},"robot_c":{"battery":100,"position":[50,60],"status":"CHARGING"}}
-1.76741e+09|REMOVE|robot_b|{"battery":"50","position":[50,30],"status":"IDLE"}
