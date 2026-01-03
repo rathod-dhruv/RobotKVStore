@@ -23,6 +23,8 @@ private:
   void log_operation(const std::string &operation, const std::string &key,
                      const json &value);
 
+  void recover_log_file();
+
 public:
   KVStore(const std::string &id, const std::string &log_file_path);
 
